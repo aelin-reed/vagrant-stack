@@ -1,33 +1,42 @@
 # Vagrant Stack
 
-An all-purpose vagrant stack configuration.
+An all-purpose vagrant stack configuration which aims to minimalize 
+the required configuration when creating a new vagrant project.
 
 ## Features
 
 - Laravel/WordPress Ready
+- LAMP Stack
+  - Ubuntu Linux
+  - Apache2
+    - mod_rewrite
+  - MySQL 5
+  - PHP 5.5
+    - php-mcrypt
+    - php-memcache
+- Utilities
+  - Base
+    - Git
+    - cURL
+  - Composer
+  - NodeJS/NPM
+    - Bower
+    - Grunt
+    - Gulp
+    - Yeoman
 
-## Server Stack
+## Structure
 
-- Apache2
-- MySQL Server
-- PHP 5.5
-  - php-mcrypt
-  - php-memcache
+`./vagrant`
+The contents of this folder will be synchronized to the VM (`/vagrant/`)
 
-## Utilities 
-
-- Base
-  - Git
-  - cURL
-- Composer
-- NodeJS/NPM
-  - Bower
-  - Grunt
-  - Gulp
-  - Yeoman
+`./vagrant/public`
+The Apache document root.
 
 ## Usage
 
-Place your application in `vagrant/public` and execute `vagrant up`. Your application will be available at http://localhost:8080/ by default.
+1. Execute `vagrant up` to install the stack
+2. Place your application in `./vagrant/public/` (or in `./vagrant/` if you're using Laravel).
+3. Your application is now available at http://localhost:8080/ by default.
 
-Note: Default MySQL username/password is "root".
+**Note**: Default MySQL username/password is `root`.
