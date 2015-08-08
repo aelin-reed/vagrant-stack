@@ -25,3 +25,9 @@ An all-purpose vagrant stack configuration.
   - Grunt
   - Gulp
   - Yeoman
+
+## Usage
+
+Place your application in `vagrant/public` and execute `vagrant up`. Your application will be available at http://localhost:8080/ by default.
+
+Note: Default MySQL username/password is "root".
