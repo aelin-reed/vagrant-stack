@@ -7,7 +7,7 @@ Vagrant.configure(2) do |config|
 
   # Sync the vagrant folder with the guest. The subfolder 'public' will be used
   # as the document root by apache.
-  config.vm.synced_folder "./vagrant", "/vagrant"
+  config.vm.synced_folder "./vagrant", "/vagrant",  owner: "www-data", group: "www-data"
   
   # Provision the virtual machine using the 'bootstrap.sh' script.
   config.vm.provision :shell, path: "bootstrap.sh"
