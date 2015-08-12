@@ -49,6 +49,10 @@ npm install -g bower grunt-cli gulp yo
 curl -sS https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
 
+# Update PHP5 post_max_size and upload_max_filesize (Apache only):
+sed -i -e 's/^\(post_max_size\) = .*$/\1 = 128M/g' /etc/php5/apache2/php.ini
+sed -i -e 's/^\(upload_max_filesize\) = .*$/\1 = 128M/g' /etc/php5/apache2/php.ini
+
 # Configure the default Apache virtual host:
 echo -e '
 <VirtualHost *:80>
