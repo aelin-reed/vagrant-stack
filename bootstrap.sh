@@ -27,6 +27,7 @@ apt-get install -y \
 	mysql-server \
 	mysql-client \
 	php5 \
+	php5-curl \
 	php5-mcrypt \
 	php5-memcache \
 	php5-mysql \
@@ -43,7 +44,7 @@ sudo ln -s /usr/bin/nodejs /usr/bin/node
 
 # Update NPM and install common NPM packages:
 npm install -g npm
-npm install -g bower grunt-cli gulp yo	
+npm install -g bower grunt-cli gulp yo
 
 # Install Composer:
 curl -sS https://getcomposer.org/installer | php
@@ -63,7 +64,7 @@ echo -e '
 \t\tRequire all granted
 \t</Directory>
 </VirtualHost>
-' > /etc/apache2/sites-available/000-default.conf 
+' > /etc/apache2/sites-available/000-default.conf
 
 # Enable Apache modules:
 a2enmod rewrite
